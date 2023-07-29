@@ -13,7 +13,7 @@ const CategoryProduct = ({ data }) => {
 
       <div className="flex gap-10 my-20">
         {data?.product?.map((item) => (
-          <FeaturesProductCardTwo data={data} key={item?._id}  item={item} />
+          <FeaturesProductCardTwo  key={item?._id}  item={item} />
         ))}
       </div>
     </div>
