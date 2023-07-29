@@ -1,0 +1,184 @@
+[
+        {
+            
+          "Image": "pc_image_url1.jpg",
+          "Product Name": "Mini PC 1",
+          "Category": "CPU / Processor",
+          "Status": "In Stock",
+          "Price": 599.99,
+          "Description": "Save space without compromising performance with this compact mini PC.",
+          "Key Features": {
+            "Processor": "Intel Core i5-10400",
+            "Graphics Card": "Intel UHD Graphics 630",
+            "RAM": "8GB DDR4",
+            "Storage": "256GB NVMe SSD",
+            "Wi-Fi 6 Support": true,
+            "Ports": ["USB-C", "HDMI", "DisplayPort"],
+            "VESA Mountable": true
+          },
+          "Individual Rating": 4.5,
+          "Average Rating": 4.4,
+          "Reviews": 64
+        },
+        {
+            
+          "Image": "pc_image_url9.jpg",
+          "Product Name": "Gaming PC",
+          "Category": "CPU / Processor",
+          "Status": "In Stock",
+          "Price": 899.99,
+          "Description": "Experience top-tier gaming performance with this powerful gaming PC.",
+          "Key Features": {
+            "Processor": "AMD Ryzen 9 5900X",
+            "Graphics Card": "NVIDIA GeForce RTX 3080",
+            "RAM": "32GB DDR4",
+            "Storage": "1TB NVMe SSD",
+            "Wi-Fi 6 Support": true,
+            "Ports": ["USB-C", "HDMI", "DisplayPort"],
+            "VESA Mountable": false
+          },
+          "Individual Rating": 4.9,
+          "Average Rating": 4.9,
+          "Reviews": 128
+        },
+        {
+            
+          "Image": "pc_image12.jpg",
+          "Product Name": "Workstation PC",
+          "Category": "CPU / Processor",
+          "Status": "In Stock",
+          "Price": 1199.99,
+          "Description": "Handle demanding tasks with ease using this high-performance workstation PC.",
+          "Key Features": {
+            "Processor": "Intel Xeon W-2255",
+            "Graphics Card": "NVIDIA Quadro RTX 4000",
+            "RAM": "64GB DDR4 ECC",
+            "Storage": "1TB NVMe SSD",
+            "Wi-Fi 6 Support": true,
+            "Ports": ["USB-C", "HDMI", "DisplayPort"],
+            "VESA Mountable": false
+          },
+          "Individual Rating": 4.7,
+          "Average Rating": 4.6,
+          "Reviews": 95
+        },
+        {
+            
+          "Image": "graphics_card_image1.jpg",
+          "Product Name": "Gaming Graphics Card",
+          "Category": "Others (GPU, Mouse, Keyboard, etc...)",
+          "Status": "In Stock",
+          "Price": 549.99,
+          "Description": "Experience stunning visuals and smooth gaming performance with this graphics card.",
+          "Key Features": {
+            "Graphics Processor": "NVIDIA GeForce RTX 3070",
+            "Memory": "8GB GDDR6",
+            "CUDA Cores": 5888,
+            "Ray Tracing": true,
+            "Output Ports": ["HDMI", "DisplayPort"]
+          },
+          "Individual Rating": 4.8,
+          "Average Rating": 4.7,
+          "Reviews": 82
+        },
+        {
+            
+          "Image": "mouse_image1.jpg",
+          "Product Name": "Wireless Gaming Mouse",
+          "Category": "Others (GPU, Mouse, Keyboard, etc...)",
+          "Status": "In Stock",
+          "Price": 79.99,
+          "Description": "Dominate your gaming sessions with this ergonomic wireless gaming mouse.",
+          "Key Features": {
+            "DPI Range": "100 - 16000 DPI",
+            "Buttons": 8,
+            "Battery Life": "50 hours",
+            "Wireless Technology": "2.4GHz RF",
+            "RGB Lighting": true
+          },
+          "Individual Rating": 4.3,
+          "Average Rating": 4.2,
+          "Reviews": 57
+        },
+        {
+            
+          "Image": "keyboard_image1.jpg",
+          "Product Name": "Mechanical Gaming Keyboard",
+          "Category": "Others (GPU, Mouse, Keyboard, etc...)",
+          "Status": "In Stock",
+          "Price": 129.99,
+          "Description": "Enhance your gaming experience with this responsive and customizable mechanical keyboard.",
+          "Key Features": {
+            "Switch Type": "Cherry MX Brown",
+            "Backlighting": true,
+            "Key Rollover": "N-Key",
+            "USB Passthrough": true,
+            "Media Controls": true
+          },
+          "Individual Rating": 4.8,
+          "Average Rating": 4.8,
+          "Reviews": 92
+        },
+        {
+            
+          "Image": "monitor_image1.jpg",
+          "Product Name": "Ultra-Wide Gaming Monitor",
+          "Category": "Monitor",
+          "Status": "In Stock",
+          "Price": 699.99,
+          "Description": "Immerse yourself in your games with this ultra-wide gaming monitor.",
+          "Key Features": {
+            "Display Size": "34 inches",
+            "Resolution": "3440x1440",
+            "Refresh Rate": "144Hz",
+            "Response Time": "1ms",
+            "Panel Type": "IPS",
+            "HDR Support": true
+          },
+          "Individual Rating": 4.7,
+          "Average Rating": 4.6,
+          "Reviews": 75
+        },
+        {
+            
+          "Image": "monitor_image2.jpg",
+          "Product Name": "Curved Gaming Monitor",
+          "Category": "Monitor",
+          "Status": "In Stock",
+          "Price": 499.99,
+          "Description": "Get a more immersive gaming experience with this curved gaming monitor.",
+          "Key Features": {
+            "Display Size": "27 inches",
+            "Resolution": "2560x1440",
+            "Refresh Rate": "165Hz",
+            "Response Time": "3ms",
+            "Panel Type": "VA",
+            "HDR Support": false
+          },
+          "Individual Rating": 4.5,
+          "Average Rating": 4.4,
+          "Reviews": 64
+        },
+
+        {
+            
+          "Image": "monitor_image3.jpg",
+          "Product Name": "4K Professional Monitor",
+          "Category": "Monitor",
+          "Status": "In Stock",
+          "Price": 799.99,
+          "Description": "Achieve exceptional color accuracy and clarity with this 4K professional monitor.",
+          "Key Features": {
+            "Display Size": "32 inches",
+            "Resolution": "3840x2160",
+            "Refresh Rate": "60Hz",
+            "Response Time": "5ms",
+            "Panel Type": "IPS",
+            "HDR Support": true
+          },
+          "Individual Rating": 4.9,
+          "Average Rating": 4.8,
+          "Reviews": 98
+        }
+    ]
+      
