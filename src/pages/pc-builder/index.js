@@ -1,13 +1,15 @@
 import RootLayout from "@/components/layouts/RootLayout";
 import { useGetCategoryQuery } from "@/redux/api/api";
+import { resetBuilder } from "@/redux/builderReducer";
 import { useRouter } from "next/router";
 import React from "react";
 import { useDispatch, useSelector } from "react-redux";
+import { toast } from "react-toastify";
 
 const Index = () => {
   const { data } = useGetCategoryQuery(undefined);
   const { builder } = useSelector((state) => state.builder);
-  console.log(builder, "builder");
+  const dispatch=useDispatch()
   const route = useRouter();
   return (
     <div className="px-10 mt-[50px] w-[80%] mx-auto">
@@ -45,7 +47,12 @@ const Index = () => {
           Complete
         </button>
       ) : (
-        <button className="complete_btn cursor-pointer bg-[#5877F6] border-none py-2 px-16 text-white rounded-[5px] text-[12px] font-bold">
+        <button onClick={()=>{
+          dispatch(resetBuilder())
+          toast.success('Congratus  !You successfully build your pc ',{
+            position:"bottom-right"
+          })
+        }} className="complete_btn cursor-pointer bg-[#5877F6] border-none py-2 px-16 text-white rounded-[5px] text-[12px] font-bold">
           Complete
         </button>
       )}

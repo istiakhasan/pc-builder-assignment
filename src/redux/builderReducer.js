@@ -13,11 +13,14 @@ export const builderSlice = createSlice({
          if(!isExist){
             state.builder.push(action.payload)
          }
+    },
+    resetBuilder:(state)=>{
+         state.builder=[]
     }
   }
 })
 
 // Action creators are generated for each case reducer function
-export const { addToBuilder } = builderSlice.actions
+export const { addToBuilder,resetBuilder } = builderSlice.actions
 
 export default builderSlice.reducer
