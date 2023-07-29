@@ -1,7 +1,9 @@
 import Image from "next/image";
+import { useRouter } from "next/router";
 import React from "react";
 
 const FeaturesProductCardTwo = ({ item,data }) => {
+  const router=useRouter()
   return (
     <div className=" w-[320px] h-auto">
       <div class="features_container h-[100%]">
@@ -27,8 +29,8 @@ const FeaturesProductCardTwo = ({ item,data }) => {
           <p className="text-start text-3xl">Rating: {item?.individualRating}</p>
         </div>
         <div class="button-wrapper flex justify-center gap-10">
-          <button class="btn outline">DETAILS</button>
-          <button class="btn fill">BUY NOW</button>
+          <button onClick={()=>router.push(`/product/${item?._id}`)} class="btn outline">DETAILS</button>
+          <button class="btn fill">Add To Builder</button>
         </div>
       </div>
     </div>

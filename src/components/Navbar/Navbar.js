@@ -1,11 +1,13 @@
+import { MainContext } from "@/pages/_app";
+import { useGetCategoryQuery } from "@/redux/api/api";
 import Link from "next/link";
-import { useRouter } from 'next/router';
+import { useRouter } from "next/router";
 
 const Navbar = () => {
-    const router = useRouter();
+  const router = useRouter();
+  const { data } = useGetCategoryQuery(undefined);
 
-  
-  
+  console.log(data, "data");
   const navLinks = (
     <>
       <li>
@@ -15,33 +17,21 @@ const Navbar = () => {
         <details>
           <summary className="text-white">Category</summary>
           <ul className="p-2 ">
-            <li>
-              <a className="text-black whitespace-nowrap">CPU / Processor</a>
-            </li>
-            <li>
-              <a className="text-black whitespace-nowrap">Motherboard</a>
-            </li>
-            <li>
-              <a className="text-black whitespace-nowrap">RAM</a>
-            </li>
-            <li>
-              <a className="text-black whitespace-nowrap">Power Supply Unit</a>
-            </li>
-            <li>
-              <a className="text-black whitespace-nowrap">Storage Device</a>
-            </li>
-            <li>
-              <a className="text-black whitespace-nowrap">Monitor</a>
-            </li>
-            <li>
-              <a className="text-black whitespace-nowrap">Others</a>
-            </li>
-            
+            {data?.map((item, i) => (
+              <li key={i}>
+                <Link href={`/category/${item?._id}`} className="text-black whitespace-nowrap">{item?.title}</Link>
+              </li>
+            ))}
           </ul>
         </details>
       </li>
       <li>
-        <button onClick={()=>router.push('/pc-builder')} className="pc_builder">PC Builde</button>
+        <button
+          onClick={() => router.push("/pc-builder")}
+          className="pc_builder"
+        >
+          PC Builde
+        </button>
       </li>
     </>
   );
@@ -69,12 +59,16 @@ const Navbar = () => {
             <ul
               tabIndex={0}
               className="menu menu-sm dropdown-content custom text-black mt-3 z-[1] p-2 shadow bg-base-100  rounded-box w-52"
-            
             >
               {navLinks}
             </ul>
           </div>
-          <a onClick={()=>router.push('/')} className=" normal-case cursor-pointer text-white  text-xl">IR TELECOM</a>
+          <a
+            onClick={() => router.push("/")}
+            className=" normal-case cursor-pointer text-white  text-xl"
+          >
+            IR TELECOM
+          </a>
         </div>
         <div className="navbar-end hidden lg:flex">
           <ul className="menu menu-horizontal px-1">{navLinks}</ul>
