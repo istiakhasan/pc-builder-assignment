@@ -1,8 +1,8 @@
 import React from "react";
-import Header from "../header/Header";
 import Navbar from "../Navbar/Navbar";
 import Footer from "../Footer/Footer";
-
+import { ToastContainer } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 const RootLayout = ({ children,category }) => {
   console.log(category,"category form root layout");
   return (
@@ -10,6 +10,7 @@ const RootLayout = ({ children,category }) => {
       <Navbar />
       {children}
       <Footer />
+      <ToastContainer />
     </div>
   );
 };

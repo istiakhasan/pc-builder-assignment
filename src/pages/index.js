@@ -8,13 +8,14 @@ import FeaturesProductCardTwo from "@/components/featuresProductCard/FeaturesPro
 
 const inter = Inter({ subsets: ["latin"] });
 
-export default function Home({category}) {
+export default function Home({category,products}) {
+  console.log(products,"products");
   return (
     <>
       <Header />
       <div className="grid grid-cols-3 gap-10 mt-10 lg:px-16">
-        {[...Array(6).keys()].map((item) => (
-          <FeaturesProductCardTwo key={item} />
+        {products?.map((item) => (
+          <FeaturesProductCardTwo key={item} item={item} />
         ))}
       </div>
       <CategorySection category={category} />
@@ -28,8 +29,15 @@ Home.getLayout = function getLayout(page) {
 
 
 export const getStaticProps = async () => {
-  const res = await fetch('http://localhost:4000/category')
-  const repo = await res.json()
-  return { props: { category:repo } }
-}
+  // Fetch category data
+  const categoryRes = await fetch("http://localhost:4000/category");
+  const categoryData = await categoryRes.json();
+
+  // Fetch product data
+  const productRes = await fetch("http://localhost:4000/product");
+  const productData = await productRes.json();
+
+  // Return both category and product data as props
+  return { props: { category: categoryData, products: productData } };
+};
 
