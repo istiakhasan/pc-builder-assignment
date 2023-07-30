@@ -29,16 +29,23 @@ const Index = ({ data }) => {
           </div>
           <h1 className="flex-1 text-[12px] uppercase">{item?.title}</h1>
           <h1 className="flex-1 text-[12px]">{item?.description}</h1>
-          {builder.some((dt) => dt == item?._id) ? (
-            <button
-              onClick={() => route.push(`/category/${item?._id}`)}
-              className="btn btn-disabled btn-sm flex-1"
-            >
-              Selected
-            </button>
+          {builder.some((dt) => dt?.categoryId === item?._id) ? (
+            <div className="flex-1 text-center">
+              <button
+                onClick={() => route.push(`/category/${item?._id}`)}
+                className="btn w-full btn-disabled btn-sm "
+              >
+                Selected
+              </button>
+              <p className="text-green-600 font-semibold text-[14px]">
+                {builder?.find((bd) => bd?.categoryId === item?._id) &&
+                  builder.find((bd) => bd?.categoryId === item?._id)
+                    ?.productName}
+              </p>
+            </div>
           ) : (
             <button
-              onClick={() => route.push(`/category/${item?._id}`)}
+              onClick={() => route.push(`/pc-builder/${item?._id}`)}
               className="btn btn-primary lg:btn-sm btn-xs flex-1"
             >
               Choose
@@ -64,6 +71,19 @@ const Index = ({ data }) => {
           Complete
         </button>
       )}
+      {builder?.length > 0 && (
+        <button
+          onClick={() => {
+            dispatch(resetBuilder());
+            toast.warning("Reset ", {
+              position: "bottom-right",
+            });
+          }}
+          className="complete_btn ml-3 cursor-pointer bg-red-500 border-none py-2 px-16 text-white rounded-[5px] text-[12px] font-bold"
+        >
+          Reset
+        </button>
+      )}
     </div>
   );
 };
@@ -76,7 +96,7 @@ Index.getLayout = function getLayout(page) {
 
 export const getServerSideProps = async (context) => {
   const { params } = context;
-  const res = await fetch(`http://localhost:4000/category`);
+  const res = await fetch(`https://ir-telecom-server.vercel.app/category`);
   const data = await res.json();
   return { props: { data: data } };
 };

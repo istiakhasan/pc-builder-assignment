@@ -12,7 +12,7 @@ const CategoryProduct = ({ data }) => {
 
       <div className="flex flex-wrap gap-10 lg:my-20 my-10">
         {data?.product?.map((item,i) => (
-          <FeaturesProductCardTwo  key={i}  item={item} />
+          <FeaturesProductCardTwo isBuilder={true}  key={i}  item={item} />
         ))}
       </div>
     </div>
@@ -29,7 +29,7 @@ export const getStaticPaths = async () => {
   const res = await fetch(`https://ir-telecom-server.vercel.app/category`);
   const category = await res.json();
   const paths = category?.map((item) => ({
-    params: { categoryid: item?._id?.toString() },
+    params: { builderid: item?._id?.toString() },
   }));
   return { paths, fallback: false };
 };
@@ -37,7 +37,7 @@ export const getStaticPaths = async () => {
 export const getStaticProps = async (context) => {
   const { params } = context;
   const res = await fetch(
-    `https://ir-telecom-server.vercel.app/category/${params?.categoryid}`
+    `https://ir-telecom-server.vercel.app/category/${params?.builderid}`
   );
   const data = await res.json();
   return { props: { data: data } };

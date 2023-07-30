@@ -9,9 +9,13 @@ export const builderSlice = createSlice({
   initialState,
   reducers: {
     addToBuilder:(state,action)=>{
-         const isExist=state.builder.find(item=>item===action.payload)
+         const isExist=state.builder.find(item=>item?.categoryId===action.payload.categoryId)
          if(!isExist){
             state.builder.push(action.payload)
+         }else{
+          const remining=state.builder.filter(item=>item?.categoryId !== action.payload.categoryId)
+          const newArr=[...remining,action.payload]
+          state.builder.push(newArr)
          }
     },
     resetBuilder:(state)=>{

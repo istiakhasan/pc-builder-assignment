@@ -75,7 +75,7 @@ const Navbar = () => {
           </div>
           <a
             onClick={() => router.push("/")}
-            className=" normal-case cursor-pointer text-white  text-xl"
+            className=" normal-case whitespace-nowrap cursor-pointer text-white  text-xl"
           >
             IR TELECOM
           </a>
@@ -83,9 +83,6 @@ const Navbar = () => {
         <div className="navbar-end hidden lg:flex">
           <ul className="menu menu-horizontal px-1">{navLinks}</ul>
         </div>
-        {/* <div className="navbar-end">
-          <a className="btn">Button</a>
-        </div> */}
       </div>
     </>
   );

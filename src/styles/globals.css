@@ -231,3 +231,7 @@ body {
   transition: all .3s ease;    
 }
 
+.banner_section{
+  background: url(../../public/banner.jpg);
+}
+

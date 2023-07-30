@@ -16,7 +16,7 @@ const RootLayout = ({ children,category }) => {
 
 export default RootLayout;
 export const getStaticProps = async () => {
-  const res = await fetch('http://localhost:4000/category')
+  const res = await fetch('https://ir-telecom-server.vercel.app/category')
   const repo = await res.json()
   return { props: { category:repo } }
 }

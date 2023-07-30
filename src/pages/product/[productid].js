@@ -82,7 +82,7 @@ ProductDetails.getLayout = function getLayout(page) {
 };
 
 export const getStaticPaths = async () => {
-  const res = await fetch(`http://localhost:4000/product`);
+  const res = await fetch(`https://ir-telecom-server.vercel.app/product`);
   const products = await res.json();
   const paths = products?.map((product) => ({
     params: { productid: product?._id?.toString() },
@@ -92,7 +92,7 @@ export const getStaticPaths = async () => {
 
 export const getStaticProps = async (context) => {
   const { params } = context;
-  const res = await fetch(`http://localhost:4000/product/${params?.productid}`);
+  const res = await fetch(`https://ir-telecom-server.vercel.app/product/${params?.productid}`);
   const data = await res.json();
   return { props: { data: data } };
 };
