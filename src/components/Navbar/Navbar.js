@@ -1,17 +1,16 @@
 import { MainContext } from "@/pages/_app";
 import { useGetCategoryQuery } from "@/redux/api/api";
+import { signOut, useSession } from "next-auth/react";
 import Link from "next/link";
 import { useRouter } from "next/router";
 
 const Navbar = () => {
   const router = useRouter();
   const { data } = useGetCategoryQuery(undefined);
-
+  const {data:session}=useSession()
   const navLinks = (
     <>
-      <li>
-        <a>Item 1</a>
-      </li>
+      
       <li tabIndex={0}>
         <details>
           <summary className="text-white">Category</summary>
@@ -32,6 +31,18 @@ const Navbar = () => {
           PC Builde
         </button>
       </li>
+     {session?.user?.email && <li>
+        <button
+          style={{background:"#EA3C34",color:"white"}}
+          onClick={() => signOut({
+            callbackUrl:"/"
+          })}
+          className="pc_builder "
+        >
+         Log Out
+        </button>
+      </li>}
+
     </>
   );
   return (

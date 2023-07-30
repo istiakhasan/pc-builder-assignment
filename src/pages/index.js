@@ -5,10 +5,12 @@ import Header from "@/components/header/Header";
 import RootLayout from "@/components/layouts/RootLayout";
 import CategorySection from "@/components/CategorySection/CategorySection";
 import FeaturesProductCardTwo from "@/components/featuresProductCard/FeaturesProductCardTwo";
-
+import { useSession, signIn, signOut } from "next-auth/react";
 const inter = Inter({ subsets: ["latin"] });
 
 export default function Home({category,products}) {
+  const session=useSession()
+  console.log(session,"session");
   return (
     <>
       <Header />
