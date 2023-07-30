@@ -11,14 +11,14 @@ const Index = ({ data }) => {
   const dispatch = useDispatch();
   const route = useRouter();
   return (
-    <div className="px-10 mt-[50px] w-[80%] mx-auto">
+    <div className="lg:px-10 mt-[50px] lg:w-[80%] mx-auto">
       {data?.map((item) => (
         <div
           style={{ border: "1px solid black" }}
-          className="flex gap-10 mb-5 p-3 items-center  justify-between"
+          className="flex gap-10 mb-5 p-3 items-center flex-wrap  justify-between"
           key={item?._id}
         >
-          <div className="flex-1">
+          <div>
             <Image
               height={200}
               width={200}
@@ -39,7 +39,7 @@ const Index = ({ data }) => {
           ) : (
             <button
               onClick={() => route.push(`/category/${item?._id}`)}
-              className="btn btn-primary btn-sm flex-1"
+              className="btn btn-primary lg:btn-sm btn-xs flex-1"
             >
               Choose
             </button>

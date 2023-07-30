@@ -8,12 +8,13 @@ import FeaturesProductCardTwo from "@/components/featuresProductCard/FeaturesPro
 import { useSession, signIn, signOut } from "next-auth/react";
 const inter = Inter({ subsets: ["latin"] });
 
-export default function Home({category,products}) {
-  const session=useSession()
-  console.log(session,"session");
+export default function Home({ category, products }) {
+  const session = useSession();
+  console.log(session, "session");
   return (
     <>
       <Header />
+      <h1 className="text-center my-16 lg:text-4xl text-2xl font-bold italic underline">Featured products</h1>
       <div className="grid lg:grid-cols-3 lg:gap-y-28 gap-y-10 mt-10 lg:px-16">
         {products?.map((item) => (
           <FeaturesProductCardTwo key={item} item={item} />
@@ -28,7 +29,6 @@ Home.getLayout = function getLayout(page) {
   return <RootLayout>{page}</RootLayout>;
 };
 
-
 export const getStaticProps = async () => {
   // Fetch category data
   const categoryRes = await fetch("http://localhost:4000/category");
@@ -41,4 +41,3 @@ export const getStaticProps = async () => {
   // Return both category and product data as props
   return { props: { category: categoryData, products: productData } };
 };
-

@@ -85,7 +85,8 @@ body {
   perspective: 50em;
   
   /* &:nth-child(1) { --bi: repeating-linear-gradient(30deg, #111 0 0.25em, #333 0 1em); } */
- --bi: linear-gradient(#555 5em, #0000 3em), linear-gradient(60deg, #880E4F, #1A237E); 
+ --bi: linear-gradient(#221a3a 5em, #1d050500 3em), linear-gradient(60deg, #0d0a0c, #03030a);  
+ 
 }
 
 .card_two {
@@ -230,7 +231,3 @@ body {
   transition: all .3s ease;    
 }
 
-
-.complete_btn{
-  
-}
