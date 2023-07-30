@@ -7,7 +7,6 @@ const Navbar = () => {
   const router = useRouter();
   const { data } = useGetCategoryQuery(undefined);
 
-  console.log(data, "data");
   const navLinks = (
     <>
       <li>

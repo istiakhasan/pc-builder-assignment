@@ -9,11 +9,10 @@ import FeaturesProductCardTwo from "@/components/featuresProductCard/FeaturesPro
 const inter = Inter({ subsets: ["latin"] });
 
 export default function Home({category,products}) {
-  console.log(products,"products");
   return (
     <>
       <Header />
-      <div className="grid grid-cols-3 gap-10 mt-10 lg:px-16">
+      <div className="grid grid-cols-3 gap-y-28 mt-10 lg:px-16">
         {products?.map((item) => (
           <FeaturesProductCardTwo key={item} item={item} />
         ))}

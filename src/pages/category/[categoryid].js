@@ -4,7 +4,6 @@ import { useRouter } from "next/router";
 import React from "react";
 
 const CategoryProduct = ({ data }) => {
-  console.log(data, "data");
   const { query } = useRouter();
 
   return (
@@ -12,8 +11,8 @@ const CategoryProduct = ({ data }) => {
       <h1 className="text-3xl underline font-bold">{`${data?.title} category products`}</h1>
 
       <div className="flex gap-10 my-20">
-        {data?.product?.map((item) => (
-          <FeaturesProductCardTwo  key={item?._id}  item={item} />
+        {data?.product?.map((item,i) => (
+          <FeaturesProductCardTwo  key={i}  item={item} />
         ))}
       </div>
     </div>

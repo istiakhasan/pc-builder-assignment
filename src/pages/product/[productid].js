@@ -2,7 +2,6 @@ import RootLayout from "@/components/layouts/RootLayout";
 import React from "react";
 
 const ProductDetails = ({ data }) => {
-  console.log(data, "data from details page");
   return (
     <div>
       <div className="grid grid-cols-2 w-[70%] mx-auto my-10">
@@ -20,7 +19,7 @@ const ProductDetails = ({ data }) => {
               Key Features:
             </p>
             <ul style={{ padding: "0 18px" }}>
-              {Object.keys(data?.KeyFeatures).map((dt, index) => (
+              {data?.KeyFeatures && Object.keys(data?.KeyFeatures).map((dt, index) => (
                 <li
                   className="text-[12px] font-semibold mb-2"
                   style={{ listStyle: "initial" }}
@@ -87,7 +86,7 @@ export const getStaticPaths = async () => {
   const paths = products?.map((product) => ({
     params: { productid: product?._id?.toString() },
   }));
-  return { paths, fallback: false };
+  return { paths, fallback: true };
 };
 
 export const getStaticProps = async (context) => {

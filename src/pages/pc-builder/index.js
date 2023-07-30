@@ -1,13 +1,11 @@
 import RootLayout from "@/components/layouts/RootLayout";
-import { useGetCategoryQuery } from "@/redux/api/api";
 import { resetBuilder } from "@/redux/builderReducer";
 import { useRouter } from "next/router";
 import React from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { toast } from "react-toastify";
 
-const Index = () => {
-  const { data } = useGetCategoryQuery(undefined);
+const Index = ({data}) => {
   const { builder } = useSelector((state) => state.builder);
   const dispatch=useDispatch()
   const route = useRouter();
@@ -64,4 +62,11 @@ export default Index;
 
 Index.getLayout = function getLayout(page) {
   return <RootLayout>{page}</RootLayout>;
+};
+
+export const getStaticProps = async (context) => {
+  const { params } = context;
+  const res = await fetch(`http://localhost:4000/category`);
+  const data = await res.json();
+  return { props: { data: data } };
 };
