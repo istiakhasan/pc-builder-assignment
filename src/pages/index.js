@@ -30,14 +30,14 @@ Home.getLayout = function getLayout(page) {
 };
 
 export const getStaticProps = async () => {
-  // Fetch category data
+
   const categoryRes = await fetch("https://ir-telecom-server.vercel.app/category");
   const categoryData = await categoryRes.json();
 
-  // Fetch product data
+
   const productRes = await fetch("https://ir-telecom-server.vercel.app/product");
   const productData = await productRes.json();
 
-  // Return both category and product data as props
-  return { props: { category: categoryData, products: productData } };
+
+  return { props: { category: categoryData, products: productData },revalidate:5 };
 };
