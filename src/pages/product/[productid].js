@@ -5,12 +5,11 @@ import React from "react";
 const ProductDetails = ({ data }) => {
   return (
     <div>
-      <div className="grid grid-cols-2 w-[70%] mx-auto my-10">
+      <div className="grid lg:grid-cols-2 lg:w-[70%] px-3 mx-auto my-10">
         <div>
-          <Image height={200} width={200}  src={data?.image} className="h-[500px] w-full" alt=""/>
-          {/* <img src={data?.image} className="h-[500px] w-full" /> */}
+          <Image height={200} width={200}  src={data?.image} className="lg:h-[500px] h-[300px] rounded-[4px] w-full" alt=""/>
         </div>
-        <div className="px-10">
+        <div className="lg:px-10">
           <h1 className="text-2xl font-semibold ">{data?.product_Name}</h1>
           <div>
             <p className="text-[11px] underline uppercase font-semibold">
