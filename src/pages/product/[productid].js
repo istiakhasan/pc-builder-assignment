@@ -1,4 +1,5 @@
 import RootLayout from "@/components/layouts/RootLayout";
+import Image from "next/image";
 import React from "react";
 
 const ProductDetails = ({ data }) => {
@@ -6,7 +7,8 @@ const ProductDetails = ({ data }) => {
     <div>
       <div className="grid grid-cols-2 w-[70%] mx-auto my-10">
         <div>
-          <img src={data?.image} className="h-[500px] w-full" />
+          <Image height={200} width={200}  src={data?.image} className="h-[500px] w-full" alt=""/>
+          {/* <img src={data?.image} className="h-[500px] w-full" /> */}
         </div>
         <div className="px-10">
           <h1 className="text-2xl font-semibold ">{data?.product_Name}</h1>

@@ -13,15 +13,15 @@ const FeaturesProductCardTwo = ({ item }) => {
       <div class="features_container h-[100%]">
         <div class="wrapper">
           <div class="banner-image">
-            <img className="w-full h-full" src={item?.image} />
-            {/* <Image 
+            {/* <img className="w-full h-full" src={item?.image} /> */}
+            <Image 
           width={500}
           height={100} 
           className="w-full h-full"
           responsive
           src={item?.image}
           alt="Shoes"
-        /> */}
+        />
           </div>
           <h1 className="text-start"> {item?.product_Name}</h1>
           <p className="text-start">

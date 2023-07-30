@@ -1,13 +1,14 @@
 import RootLayout from "@/components/layouts/RootLayout";
 import { resetBuilder } from "@/redux/builderReducer";
+import Image from "next/image";
 import { useRouter } from "next/router";
 import React from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { toast } from "react-toastify";
 
-const Index = ({data}) => {
+const Index = ({ data }) => {
   const { builder } = useSelector((state) => state.builder);
-  const dispatch=useDispatch()
+  const dispatch = useDispatch();
   const route = useRouter();
   return (
     <div className="px-10 mt-[50px] w-[80%] mx-auto">
@@ -18,7 +19,13 @@ const Index = ({data}) => {
           key={item?._id}
         >
           <div className="flex-1">
-            <img className="h-[70px] w-[70px] object-fill " src={item?.image} />
+            <Image
+              height={200}
+              width={200}
+              alt="image"
+              className="h-[70px] w-[70px] object-fill "
+              src={item?.image}
+            />
           </div>
           <h1 className="flex-1 text-[12px] uppercase">{item?.title}</h1>
           <h1 className="flex-1 text-[12px]">{item?.description}</h1>
@@ -45,12 +52,15 @@ const Index = ({data}) => {
           Complete
         </button>
       ) : (
-        <button onClick={()=>{
-          dispatch(resetBuilder())
-          toast.success('Congratus  !You successfully build your pc ',{
-            position:"bottom-right"
-          })
-        }} className="complete_btn cursor-pointer bg-[#5877F6] border-none py-2 px-16 text-white rounded-[5px] text-[12px] font-bold">
+        <button
+          onClick={() => {
+            dispatch(resetBuilder());
+            toast.success("Congratus  !You successfully build your pc ", {
+              position: "bottom-right",
+            });
+          }}
+          className="complete_btn cursor-pointer bg-[#5877F6] border-none py-2 px-16 text-white rounded-[5px] text-[12px] font-bold"
+        >
           Complete
         </button>
       )}
@@ -64,7 +74,7 @@ Index.getLayout = function getLayout(page) {
   return <RootLayout>{page}</RootLayout>;
 };
 
-export const getStaticProps = async (context) => {
+export const getServerSideProps = async (context) => {
   const { params } = context;
   const res = await fetch(`http://localhost:4000/category`);
   const data = await res.json();
