@@ -7,10 +7,10 @@ const CategoryProduct = ({ data }) => {
   const { query } = useRouter();
 
   return (
-    <div className="px-10">
-      <h1 className="text-3xl underline font-bold">{`${data?.title} category products`}</h1>
+    <div className="lg:px-10 px-3">
+      <h1 className="lg:text-3xl text-xl underline font-bold">{`${data?.title} category products`}</h1>
 
-      <div className="flex gap-10 my-20">
+      <div className="flex flex-wrap gap-10 lg:my-20 my-10">
         {data?.product?.map((item,i) => (
           <FeaturesProductCardTwo  key={i}  item={item} />
         ))}
