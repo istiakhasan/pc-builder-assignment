@@ -14,7 +14,7 @@ export default function Home({category,products}) {
   return (
     <>
       <Header />
-      <div className="grid grid-cols-3 gap-y-28 mt-10 lg:px-16">
+      <div className="grid lg:grid-cols-3 lg:gap-y-28 gap-y-10 mt-10 lg:px-16">
         {products?.map((item) => (
           <FeaturesProductCardTwo key={item} item={item} />
         ))}
